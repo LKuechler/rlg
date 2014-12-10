@@ -2,16 +2,31 @@
 Worldgenerator:
 	☐ lake generator
 	☐ "gatheringfood" generator
-	Textures:
-		☐ module for getting textures
-		☐ transition textures (sand to water)
-		☐ animatet textures
+	☐ generation indicator
+
+Textures:
+	☐ mountain texture
+	☐ freshwater texture
+	☐ titleset generator
+		// generate one titleset out of all linked textures
+		// after that only load one titleset not multiple textures
+	☐ function for getting textures
+	☐ transition textures (sand to water)
+	☐ animatet textures
+		// how would this work with only one titleset?
+		// complete titleset as gif or animations via multiple textures?
+			// with multiple textures the canvas would need to be repainted for every animation
+		// what about out of sync animations?
+			// how would that look?
 
 Ai:
 	☐ define ai object structure
+	☐ collision detection
+		// should check if target block has attribute passable
 	☐ tasks system
 		☐ give ai without task a task
 		☐ tasklist
+	☐ food and water system
 	Tasks:
 		☐ idle movement in area
 		☐ move to point
@@ -20,5 +35,22 @@ Ai:
 
 Basic:
 	☐ saving worlds / loading worlds
+		☐ localStorage
+			☐ minify world with lz-string?
 	☐ create tick function
 	☐ canvas layer for entitys
+	☐ button for world generation
+	☐ input options for world generation
+	☐ better zoom
+		☐ click on map and zoom with this point in center
+		☐ stepless zoom with mousewheel or range input
+	☐ git repository
+	☐ api doku
+
+Questions:
+	☐ How big of a world can i save?
+	☐ can i optimize the canvas painting?
+		☐ initial
+			✔ only draw color when there is no image @done(2014-12-11 00:15) @project(Questions)
+			☐ collect blocks with the same type and then paint them together
+		☐ on change
