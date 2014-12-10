@@ -1,0 +1,24 @@
+
+Worldgenerator:
+	☐ lake generator
+	☐ "gatheringfood" generator
+	Textures:
+		☐ module for getting textures
+		☐ transition textures (sand to water)
+		☐ animatet textures
+
+Ai:
+	☐ define ai object structure
+	☐ tasks system
+		☐ give ai without task a task
+		☐ tasklist
+	Tasks:
+		☐ idle movement in area
+		☐ move to point
+		☐ wandering
+		☐ getting ressources
+
+Basic:
+	☐ saving worlds / loading worlds
+	☐ create tick function
+	☐ canvas layer for entitys
