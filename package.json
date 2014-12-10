@@ -1,0 +1,25 @@
+{
+  "name": "rlg",
+  "version": "v0.0.1",
+  "dependencies": {
+    "express": "~3.5.0",
+    "consolidate": "~0.10.0",
+    "qejs": "~3.0.5",
+    "lz-string": "~1.3.3"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "description": "This is the random life generator. It generates a random world and puts ai in it that trys to survive in it.",
+  "main": "server.js",
+  "devDependencies": {
+    "nodemon": "~1.0.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://89.110.158.51/git/rlg.git"
+  },
+  "author": "Lasse Küchler",
+  "license": "MIT",
+  "private": true
+}

@@ -1,0 +1,24 @@
+[
+	"/js/basic/math.js",
+	"/js/basic/getBlocksInRadius.js",
+	"/js/basic/checkRadiusForBlock.js",
+
+	"/js/sprites/sprites.js",
+
+	"/js/blocks/ambienttype.js",
+	"/js/blocks/blocktype.js",
+
+	"/js/draw/scale.js",
+	"/js/draw/drawWorld.js",
+	"/js/draw/drawShadows.js",
+
+	"/js/generation/generateBlock.js",
+	"/js/generation/generateNoise.js",
+	"/js/generation/river.js",
+	"/js/generation/trees.js",
+
+	"/js/init/gameLoop.js",
+
+	"/js/init/generateWorld.js"
+
+]
