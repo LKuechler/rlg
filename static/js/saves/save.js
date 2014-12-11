@@ -17,6 +17,9 @@ function save(name) {
 		}
 	}
 	// return(JSON.stringify(save));
-	console.log(JSON.stringify(save));
-	// localStorage.setItem(name, JSON.stringify(save))
+	// console.log(JSON.stringify(save));
+	console.log("Size of sample is: " + save.length);
+	var compressed = LZString.compress(save);
+	console.log("Size of compressed sample is: " + compressed.length);
+	localStorage.setItem(name, compressed)
 }

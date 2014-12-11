@@ -38,6 +38,8 @@ Basic:
 		☐ localStorage
 			☐ minify world with lz-string?
 		☐ indexeddb
+			// bad support. Only really usable in Chrome
+		☐ save as file
 	☐ create tick function
 	☐ canvas layer for entitys
 	☐ button for world generation
