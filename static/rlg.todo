@@ -37,6 +37,7 @@ Basic:
 	☐ saving worlds / loading worlds
 		☐ localStorage
 			☐ minify world with lz-string?
+		☐ indexeddb
 	☐ create tick function
 	☐ canvas layer for entitys
 	☐ button for world generation
@@ -46,6 +47,7 @@ Basic:
 		☐ stepless zoom with mousewheel or range input
 	☐ git repository
 	☐ api doku
+	☐ function to get same blocks that are linked together
 
 Questions:
 	☐ How big of a world can i save?
