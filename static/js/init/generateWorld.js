@@ -18,9 +18,8 @@ var ambientLayer = ambientCanvas.getContext("2d");
 var heightMap = generateNoise();
 var rainMap = generateNoise();
 for (var x=0; x < world.width; x++) {
-	world[x] = [];
 	for (var y=0; y < world.height; y++) {
-		world[x][y] = generateBlock(x, y, heightMap[x][y]);
+		world[x + "-" + y] = generateBlock(x, y, heightMap[x + "-" + y]);
 	}
 }
 for (var x=0; x < world.width; x++) {

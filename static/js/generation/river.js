@@ -4,11 +4,11 @@ function generateRivers(){
 	for (var x=0; x < world.width; x++) {
 		for (var y=0; y < world.height; y++) {
 			if (
-				heightMap[x][y] < 0.1 &&
-				heightMap[x-1][y] < 0.2 &&
-				heightMap[x][y-1] < 0.2 &&
-				heightMap[x][y+1] < 0.2 &&
-				rainMap[x][y] > 0.8 &&
+				heightMap[x + "-" + y] < 0.1 &&
+				heightMap[x-1 + "-" + y] < 0.2 &&
+				heightMap[x + "-" + y-1] < 0.2 &&
+				heightMap[x + "-" + y+1] < 0.2 &&
+				rainMap[x + "-" + y] > 0.8 &&
 				riverCount < (world.width*world.height)/50000
 			) {
 				var diffX = 50;
@@ -29,9 +29,9 @@ function generateRivers(){
 						y ++;
 					}
 
-					world[x][y] = blocktype[5];
+					world[x + "-" + y] = blocktype[5];
 					riverPath(x, y, "none", 0);
-					rivers[riverCount] = {object: world[x][y], x: x, y: y};
+					rivers[riverCount] = {object: world[x + "-" + y], x: x, y: y};
 					riverCount ++;
 				}
 			}
@@ -51,12 +51,12 @@ function riverPath(x, y, prevPath, length){
 			nextPath = directions[x];
 		}
 	}
-	if (world[nextPath.x][nextPath.y].id !== 0 && prevPath !== nextPath && length <= 80) {
-		world[nextPath.x][nextPath.y] = blocktype[5];
+	if (world[nextPath.x + "-" + nextPath.y].id !== 0 && prevPath !== nextPath && length <= 80) {
+		world[nextPath.x + "-" + nextPath.y] = blocktype[5];
 		if(Math.floor(Math.random()*2) !== 0) {
 			nextPath.x += Math.floor(Math.random()*2);
 			nextPath.y += Math.floor(Math.random()*2);
-			world[nextPath.x][nextPath.y] = blocktype[5];
+			world[nextPath.x + "-" + nextPath.y] = blocktype[5];
 		}
 		length ++;
 		riverPath(nextPath.x, nextPath.y, nextPath, length);

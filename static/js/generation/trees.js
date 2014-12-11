@@ -3,11 +3,11 @@ function generateTrees(){
 	for (var x=0; x < world.width; x++) {
 		for (var y=0; y < world.height; y++) {
 			if(
-				world[x][y].id === 1
+				world[x + "-" + y].id === 1
 			) {
 				if(
 					Math.random() > 0.2 &&
-					rainMap[x][y] > 0.8
+					rainMap[x + "-" + y] > 0.8
 				) {
 					treeLocations.push({x: x, y: y});
 				} else if(
