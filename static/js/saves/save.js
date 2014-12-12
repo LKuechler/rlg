@@ -1,25 +1,13 @@
 function save(name) {
 	console.log("Starting save with name: " + name);
-	var save = "";
-	var prevId;
-	for(var x = 0; x < world.length; x++){
-		for(var y = 0; y < world[x].length; y++){
-			if(world[x][y].id === prevId) {
-				save += "[" + x + "," + y + "]";
-			}
-			else if(prevId === undefined) {
-				save += world[x][y].id + ":{[" + x + "," + y + "]";
-			}
-			else {
-				save += "}" + world[x][y].id + ":{[" + x + "," + y + "]";
-			}
-			prevId = world[x][y].id;
-		}
-	}
-	// return(JSON.stringify(save));
-	// console.log(JSON.stringify(save));
-	console.log("Size of sample is: " + save.length);
-	var compressed = LZString.compress(save);
+	var saveWorld = JSON.stringify(world);
+	var saveAmbient = JSON.stringify(ambient);
+	var saveHeightMap = JSON.stringify(heightMap);
+	var saveRainMap = JSON.stringify(rainMap);
+	var saveComplete = "width:" + world.width + "height:" + world.height + "world:" + saveWorld + "|ambient:" + saveAmbient + "|heightMap:" + saveHeightMap + "|rainMap:" + saveRainMap;
+
+	console.log("Size of sample is: " + saveComplete.length);
+	var compressed = LZString.compress(saveComplete);
 	console.log("Size of compressed sample is: " + compressed.length);
-	localStorage.setItem(name, compressed)
+	localStorage.setItem(name, compressed);
 }

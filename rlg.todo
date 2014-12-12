@@ -35,8 +35,8 @@ Ai:
 
 Basic:
 	☐ saving worlds / loading worlds
-		☐ localStorage
-			☐ minify world with lz-string?
+		✔ localStorage @done(2014-12-12 23:34) @project(Basic)
+			✔ minify world with lz-string? @done(2014-12-12 23:34) @project(Basic)
 		☐ indexeddb
 			// bad support. Only really usable in Chrome
 		☐ save as file

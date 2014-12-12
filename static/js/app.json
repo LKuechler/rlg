@@ -20,6 +20,9 @@
 
 	"/js/init/gameLoop.js",
 
-	"/js/init/generateWorld.js"
+	"/js/init/generateWorld.js",
+
+	"/js/saves/save.js",
+	"/js/saves/load.js"
 
 ]
