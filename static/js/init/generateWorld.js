@@ -25,14 +25,7 @@ for (var x=0; x < world.width; x++) {
 		ambient.push(0);
 	}
 }
-function getBlock(x, y, array) {
-	return(array[getArrayPos(x,y)]);
-}
-function getArrayPos(x, y) {
-	x = x % world.width;
-	y = y % world.height;
-	return(x + y * world.width);
-}
+
 generateRivers();
 generateTrees();
 drawWorld();

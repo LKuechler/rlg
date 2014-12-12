@@ -2,6 +2,8 @@
 	"/js/basic/math.js",
 	"/js/basic/getBlocksInRadius.js",
 	"/js/basic/checkRadiusForBlock.js",
+	"/js/basic/getBlock.js",
+	"/js/basic/getArrayPos.js",
 	"/js/ext/lz-string-1.3.3.js",
 
 	"/js/sprites/sprites.js",
