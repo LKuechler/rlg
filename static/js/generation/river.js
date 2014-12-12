@@ -8,8 +8,8 @@ function generateRivers(){
 				getBlock(x-1, y, heightMap) < 0.2 &&
 				getBlock(x, y-1, heightMap) < 0.2 &&
 				getBlock(x, y+1, heightMap) < 0.2 &&
-				getBlock(x, y, rainMap) > 0.8 &&
-				riverCount < (world.width*world.height)/50000
+				getBlock(x, y, rainMap) > 0.4 &&
+				riverCount < (world.width*world.height)/20000
 			) {
 				var diffX = 50;
 				var diffY = 50;
@@ -66,9 +66,9 @@ function riverPath(x, y, prevPath, length){
 			for (var j = 0; j < lake.length; j++) {
 				world.splice(getArrayPos(lake[j].x, lake[j].y), 1, 5);
 			}
-			for (var j = 0; j < edgeOfLake.length; j++) {
+			for (var i = 0; i < edgeOfLake.length; i++) {
 				if(Math.random() < 0.5) {
-					world.splice(getArrayPos(edgeOfLake[j].x, edgeOfLake[j].y), 1, 5);
+					world.splice(getArrayPos(edgeOfLake[i].x, edgeOfLake[i].y), 1, 5);
 				}
 			}
 		}
