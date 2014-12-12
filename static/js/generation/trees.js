@@ -3,11 +3,11 @@ function generateTrees(){
 	for (var x=0; x < world.width; x++) {
 		for (var y=0; y < world.height; y++) {
 			if(
-				world[x + "-" + y].id === 1
+				getBlock(x, y, world) === 1
 			) {
 				if(
 					Math.random() > 0.2 &&
-					rainMap[x + "-" + y] > 0.8
+					getBlock(x, y, rainMap) > 0.8
 				) {
 					treeLocations.push({x: x, y: y});
 				} else if(
@@ -20,6 +20,6 @@ function generateTrees(){
 		}
 	}
 	for(var a = 0; a < treeLocations.length; a++) {
-		ambient[treeLocations[a].x][treeLocations[a].y] = ambienttype[1];
+		ambient.splice(getArrayPos(treeLocations[a].x, treeLocations[a].y), 1, 1);
 	}
 }

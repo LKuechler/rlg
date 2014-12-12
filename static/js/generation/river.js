@@ -4,11 +4,11 @@ function generateRivers(){
 	for (var x=0; x < world.width; x++) {
 		for (var y=0; y < world.height; y++) {
 			if (
-				heightMap[x + "-" + y] < 0.1 &&
-				heightMap[x-1 + "-" + y] < 0.2 &&
-				heightMap[x + "-" + y-1] < 0.2 &&
-				heightMap[x + "-" + y+1] < 0.2 &&
-				rainMap[x + "-" + y] > 0.8 &&
+				getBlock(x, y, heightMap) < 0.1 &&
+				getBlock(x-1, y, heightMap) < 0.2 &&
+				getBlock(x, y-1, heightMap) < 0.2 &&
+				getBlock(x, y+1, heightMap) < 0.2 &&
+				getBlock(x, y, rainMap) > 0.8 &&
 				riverCount < (world.width*world.height)/50000
 			) {
 				var diffX = 50;
@@ -28,8 +28,7 @@ function generateRivers(){
 					} else {
 						y ++;
 					}
-
-					world[x + "-" + y] = blocktype[5];
+					world.splice(getArrayPos(x, y), 1, 5);
 					riverPath(x, y, "none", 0);
 					rivers[riverCount] = {object: world[x + "-" + y], x: x, y: y};
 					riverCount ++;
@@ -41,22 +40,22 @@ function generateRivers(){
 
 function riverPath(x, y, prevPath, length){
 	var directions = {};
-	directions[0] = {object: heightMap[x][y-1], x: x, y: y-1};
-	directions[1] = {object: heightMap[x+1][y], x: x+1, y: y};
-	directions[2] = {object: heightMap[x][y+1], x: x, y: y+1};
-	directions[3] = {object: heightMap[x-1][y], x: x-1, y: y};
+	directions[0] = {object: getBlock(x, y-1, heightMap), x: x, y: y-1};
+	directions[1] = {object: getBlock(x+1, y, heightMap), x: x+1, y: y};
+	directions[2] = {object: getBlock(x, y+1, heightMap), x: x, y: y+1};
+	directions[3] = {object: getBlock(x-1, y, heightMap), x: x-1, y: y};
 	var nextPath = {object: 0};
-	for (var x=0; x < 4; x++) {
-		if (nextPath.object < directions[x].object) {
-			nextPath = directions[x];
+	for (var a=0; a < 4; a++) {
+		if (nextPath.object < directions[a].object) {
+			nextPath = directions[a];
 		}
 	}
-	if (world[nextPath.x + "-" + nextPath.y].id !== 0 && prevPath !== nextPath && length <= 80) {
-		world[nextPath.x + "-" + nextPath.y] = blocktype[5];
+	if (getBlock(nextPath.x, nextPath.y, world) !== 0 && prevPath !== nextPath && length <= 80) {
+		world.splice(getArrayPos(nextPath.x, nextPath.y), 1, 5);
 		if(Math.floor(Math.random()*2) !== 0) {
 			nextPath.x += Math.floor(Math.random()*2);
 			nextPath.y += Math.floor(Math.random()*2);
-			world[nextPath.x + "-" + nextPath.y] = blocktype[5];
+			world.splice(getArrayPos(nextPath.x, nextPath.y), 1, 5);
 		}
 		length ++;
 		riverPath(nextPath.x, nextPath.y, nextPath, length);
