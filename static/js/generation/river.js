@@ -50,7 +50,7 @@ function riverPath(x, y, prevPath, length){
 			nextPath = directions[a];
 		}
 	}
-	if (getBlock(nextPath.x, nextPath.y, world) !== 0 && prevPath !== nextPath && length <= 80) {
+	if (getBlock(nextPath.x, nextPath.y, world) !== 0 && prevPath !== nextPath && length <= 15) {
 		world.splice(getArrayPos(nextPath.x, nextPath.y), 1, 5);
 		if(Math.floor(Math.random()*2) !== 0) {
 			nextPath.x += Math.floor(Math.random()*2);
@@ -59,5 +59,18 @@ function riverPath(x, y, prevPath, length){
 		}
 		length ++;
 		riverPath(nextPath.x, nextPath.y, nextPath, length);
+	} else if (length > 15) {
+		var lake = checkRadiusForBlock(x, y, 4, 1, world);
+		var edgeOfLake = checkRadiusForBlock(x, y, 5, 1, world);
+		if(!checkRadiusForBlock(x, y, 6, 0, world)){
+			for (var j = 0; j < lake.length; j++) {
+				world.splice(getArrayPos(lake[j].x, lake[j].y), 1, 5);
+			}
+			for (var j = 0; j < edgeOfLake.length; j++) {
+				if(Math.random() < 0.5) {
+					world.splice(getArrayPos(edgeOfLake[j].x, edgeOfLake[j].y), 1, 5);
+				}
+			}
+		}
 	}
 }

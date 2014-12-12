@@ -6,7 +6,7 @@ function generateTrees(){
 				getBlock(x, y, world) === 1
 			) {
 				if(
-					Math.random() > 0.2 &&
+					Math.random() > 0.6 &&
 					getBlock(x, y, rainMap) > 0.8
 				) {
 					treeLocations.push({x: x, y: y});
