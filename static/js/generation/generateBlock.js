@@ -1,18 +1,19 @@
-function generateBlock(x, y, height) {
+function generateBlock(x, heightMap) {
 	var number = 0;
-	if(heightMap[x][y] < 0.1) {
+	var height = heightMap[x];
+	if(height < 0.1) {
 		number = 3; //mountain
 	}
 
-	else if(heightMap[x][y] < 0.15) {
+	else if(height < 0.15) {
 		number = 2; //stone
 	}
 
-	else if(heightMap[x][y] < 0.35) {
+	else if(height < 0.35) {
 		number = 1; //grass
 	}
 
-	else if(heightMap[x][y] < 0.38) {
+	else if(height < 0.38) {
 		number = 4; //sand
 	}
 
@@ -20,5 +21,5 @@ function generateBlock(x, y, height) {
 		number = 0; //saltwater
 	}
 
-	return(blocktype[number]);
+	return(number);
 }

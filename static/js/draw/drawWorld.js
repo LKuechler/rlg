@@ -5,10 +5,11 @@ function drawWorld() {
 		for (var y = 0; y < world.height; y++)
 		{
 			// draw it
-			if(world[x][y].img) {
-				blockLayer.drawImage(world[x][y].img, 0, 0, 16, 16, x*tileWidth, y*tileHeight, tileWidth, tileHeight);
+			var block = blocktype[getBlock(x, y, world)];
+			if(block.img) {
+				blockLayer.drawImage(block.img, 0, 0, 16, 16, x*tileWidth, y*tileHeight, tileWidth, tileHeight);
 			} else {
-				blockLayer.fillStyle = world[x][y].color;
+				blockLayer.fillStyle = block.color;
 				blockLayer.fillRect(x*tileWidth, y*tileHeight, tileWidth, tileHeight);
 			}
 		}
@@ -20,10 +21,11 @@ function drawWorld() {
 		for (var y = 0; y < world.height; y++)
 		{
 			// draw it
-			if(ambient[x][y].img) {
-				ambientLayer.drawImage(ambient[x][y].img, 0, 0, 16, 16, x*tileWidth, y*tileHeight, tileWidth, tileHeight);
+			var ambientBlock = ambienttype[getBlock(x, y, ambient)];
+			if(ambientBlock.img) {
+				ambientLayer.drawImage(ambientBlock.img, 0, 0, 16, 16, x*tileWidth, y*tileHeight, tileWidth, tileHeight);
 			} else {
-				ambientLayer.fillStyle = ambient[x][y].color;
+				ambientLayer.fillStyle = ambientBlock.color;
 				ambientLayer.fillRect(x*tileWidth, y*tileHeight, tileWidth, tileHeight);
 			}
 		}

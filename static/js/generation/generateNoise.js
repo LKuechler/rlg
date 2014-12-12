@@ -4,8 +4,7 @@ function generateNoise() {
 	var wWidth = world.width/30;
 
 	for(i = 0; i <= wHeight; i++) {
-		noiseArr[i] = new Array();
-
+		noiseArr[i] = [];
 		for(j = 0; j <= wWidth; j++) {
 			var height = Math.random();
 
@@ -26,7 +25,6 @@ function interpolate(points) {
 		if(i !== 0 && i % 30 === 0) {
 			x++;
 		}
-		noiseArr[i] = [];
 		for(j = 0; j < world.height; j++) {
 			if(j !== 0 && j % 30 === 0) {
 				y++;
@@ -41,7 +39,7 @@ function interpolate(points) {
 			mu_2 = (1 - Math.cos(mu_y * Math.PI)) / 2;
 			var int_y = int_x1 * (1 - mu_2) + int_x2 * mu_2;
 
-			noiseArr[i][j] = int_y;
+			noiseArr.push(int_y);
 		}
 		y = 0;
 	}
