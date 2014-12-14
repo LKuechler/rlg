@@ -48,7 +48,7 @@ Basic:
 	☐ better zoom
 		☐ click on map and zoom with this point in center
 		☐ stepless zoom with mousewheel or range input
-	☐ git repository
+	✔ git repository @done(2014-12-14 19:59) @project(Basic)
 	☐ api doku
 	☐ function to get same blocks that are linked together
 
