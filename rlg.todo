@@ -7,15 +7,16 @@ Worldgenerator:
 Textures:
 	☐ mountain texture
 	☐ freshwater texture
-	☐ titleset generator
-		// generate one titleset out of all linked textures
-		// after that only load one titleset not multiple textures
-	☐ function for getting textures
-	☐ transition textures (sand to water)
+	☐ tileset generator
+		// generate one tileset out of all linked textures
+		// after that only load one tileset not multiple textures
+	✔ function for getting textures @done(2014-12-14 19:15) @project(Textures)
+	✔ transition textures (water to anything) @done(2014-12-14 19:15) @project(Textures)
+	☐ transition texture for grass
 	☐ animatet textures
-		// how would this work with only one titleset?
-		// complete titleset as gif or animations via multiple textures?
-			// with multiple textures the canvas would need to be repainted for every animation
+		// how would this work with only one tileset?
+		// complete tileset as gif or animations via multiple textures?
+			// the canvas would need to be repainted for every animation
 		// what about out of sync animations?
 			// how would that look?
 
