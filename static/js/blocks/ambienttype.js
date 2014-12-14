@@ -11,6 +11,7 @@ var ambienttype = {
 		name: "Tree",
 		passable: true,
 		color: "rgba(0,0,0,0)",
-		img: spriteTree
+		img: titleset.tree,
+		imgType: "single"
 	}
 };

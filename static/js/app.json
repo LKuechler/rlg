@@ -12,8 +12,10 @@
 	"/js/blocks/blocktype.js",
 
 	"/js/draw/scale.js",
+	"/js/draw/draw.js",
 	"/js/draw/drawWorld.js",
 	"/js/draw/drawShadows.js",
+	"/js/draw/transitions/coast.js",
 
 	"/js/generation/generateBlock.js",
 	"/js/generation/generateNoise.js",

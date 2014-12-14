@@ -1,5 +1,3 @@
-var start = new Date().getTime();
-
 var world = [];
 var ambient = [];
 world.width = 420;
@@ -25,13 +23,11 @@ for (var x=0; x < world.width; x++) {
 		ambient.push(0);
 	}
 }
-
 generateRivers();
 generateTrees();
-drawWorld();
-drawShadows();
-scale(scaleFactor);
 
-var end = new Date().getTime();
-var time = end - start;
-console.log('Generation time: ' + time);
+window.onload = function() {
+	drawWorld();
+	drawShadows();
+	scale(scaleFactor);
+};

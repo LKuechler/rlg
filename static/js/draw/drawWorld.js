@@ -1,4 +1,5 @@
 function drawWorld() {
+	var start = new Date().getTime();
 	blockLayer.clearRect ( 0 , 0 , blockCanvas.width, blockCanvas.height );
 	for (var x = 0; x < world.width; x++)
 	{
@@ -6,11 +7,10 @@ function drawWorld() {
 		{
 			// draw it
 			var block = blocktype[getBlock(x, y, world)];
-			if(block.img) {
-				blockLayer.drawImage(block.img, 0, 0, 16, 16, x*tileWidth, y*tileHeight, tileWidth, tileHeight);
+			if(block.id === 0){
+				transitionCoast(x, y, block);
 			} else {
-				blockLayer.fillStyle = block.color;
-				blockLayer.fillRect(x*tileWidth, y*tileHeight, tileWidth, tileHeight);
+				draw(x, y, block, blockLayer);
 			}
 		}
 	}
@@ -22,12 +22,10 @@ function drawWorld() {
 		{
 			// draw it
 			var ambientBlock = ambienttype[getBlock(a, b, ambient)];
-			if(ambientBlock.img) {
-				ambientLayer.drawImage(ambientBlock.img, 0, 0, 16, 16, a*tileWidth, b*tileHeight, tileWidth, tileHeight);
-			} else {
-				ambientLayer.fillStyle = ambientBlock.color;
-				ambientLayer.fillRect(a*tileWidth, b*tileHeight, tileWidth, tileHeight);
-			}
+			draw(a, b, ambientBlock, ambientLayer);
 		}
 	}
+	var end = new Date().getTime();
+	var time = end - start;
+	console.log('drawing time: ' + time);
 }

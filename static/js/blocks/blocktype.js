@@ -11,7 +11,8 @@ var blocktype = {
 		name: "Grass",
 		passable: true,
 		color: "#138B14",
-		img: spriteGrass
+		img: [titleset.grass, titleset.grass4],
+		imgType: "random"
 	},
 	2: {
 		id: 2,
@@ -31,8 +32,9 @@ var blocktype = {
 		id: 4,
 		name: "Sand",
 		passable: true,
-		color: "#D0E12F",
-		img: spriteSand
+		color: "#C1A262",
+		img: titleset.sand,
+		imgType: "single"
 	},
 	5: {
 		id: 5,
