@@ -4,7 +4,7 @@ function gameLoop() {
 	// Entity Tasks
 	// All action has to happen here
 	drawWorld();
-	drawShadows()
+	drawShadows();
 	if (gameLoopActive) {
 
 		window.requestAnimationFrame(loop);
