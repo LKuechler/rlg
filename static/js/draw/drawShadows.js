@@ -4,8 +4,8 @@ function drawShadows() {
 		for (var y=0; y < world.height; y++)
 		{
 			// draw it
-			blockLayer.fillStyle = "rgba(0, 0, 0, " + getBlock(x, y, heightMap)*0.3 + ")";
-			blockLayer.fillRect(x*tileWidth, y*tileHeight, tileWidth, tileHeight);
+			shadowLayer.fillStyle = "rgba(0, 0, 0, " + getBlock(x, y, heightMap)*0.3 + ")";
+			shadowLayer.fillRect(x*tileWidth, y*tileHeight, tileWidth, tileHeight);
 		}
 	}
 }

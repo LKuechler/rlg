@@ -62,10 +62,10 @@ function transitionCoast(x, y, block) {
 	}
 	if(img) {
 		if(naighbor){
-			draw(x, y, naighbor, blockLayer);
+			drawBlock(x, y, naighbor, blockLayer);
 		}
 		blockLayer.drawImage(img, 0, 0, 16, 16, x*tileWidth, y*tileHeight, tileWidth, tileHeight);
 	} else {
-		draw(x, y, block, blockLayer);
+		drawBlock(x, y, block, blockLayer);
 	}
 }

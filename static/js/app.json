@@ -15,6 +15,7 @@
 	"/js/draw/draw.js",
 	"/js/draw/drawWorld.js",
 	"/js/draw/drawShadows.js",
+	"/js/draw/reDraw.js",
 	"/js/draw/transitions/coast.js",
 
 	"/js/generation/generateBlock.js",
