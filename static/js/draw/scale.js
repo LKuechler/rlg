@@ -15,4 +15,6 @@ decrease.addEventListener('click', function(){
 function scale(scaleFactor) {
 	blockCanvas.style.width = blockCanvas.width / scaleFactor + "px";
 	ambientCanvas.style.width = ambientCanvas.width / scaleFactor + "px";
+	entityCanvas.style.width = entityCanvas.width / scaleFactor + "px";
+	shadowCanvas.style.width = shadowCanvas.width / scaleFactor + "px";
 }

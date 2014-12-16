@@ -10,6 +10,7 @@
 
 	"/js/blocks/ambienttype.js",
 	"/js/blocks/blocktype.js",
+	"/js/blocks/entitytype.js",
 
 	"/js/draw/scale.js",
 	"/js/draw/draw.js",
@@ -20,6 +21,7 @@
 
 	"/js/generation/generateBlock.js",
 	"/js/generation/generateNoise.js",
+	"/js/generation/entitys.js",
 	"/js/generation/river.js",
 	"/js/generation/trees.js",
 

@@ -8,7 +8,7 @@ function gameLoop() {
 	// All action has to happen here
 	reDraw(oldWorld, world, blockLayer, blocktype);
 	reDraw(oldAmbient, ambient, ambientLayer, ambienttype);
-	reDraw(oldEntitys, entitys, entitysLayer, entitytype);
+	drawEntitys();
 
 	if (gameLoopActive) {
 

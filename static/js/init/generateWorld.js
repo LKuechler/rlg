@@ -14,10 +14,14 @@ blockCanvas.width = world.width * tileWidth;
 blockCanvas.height = world.height * tileHeight;
 ambientCanvas.width = world.width * tileWidth;
 ambientCanvas.height = world.height * tileHeight;
+entityCanvas.width = world.width * tileWidth;
+entityCanvas.height = world.height * tileHeight;
+shadowCanvas.width = world.width * tileWidth;
+shadowCanvas.height = world.height * tileHeight;
 var blockLayer = blockCanvas.getContext("2d");
 var ambientLayer = ambientCanvas.getContext("2d");
-var entitysLayer = ambientCanvas.getContext("2d");
-var shadowLayer = ambientCanvas.getContext("2d");
+var entitysLayer = entityCanvas.getContext("2d");
+var shadowLayer = shadowCanvas.getContext("2d");
 var heightMap = generateNoise();
 var rainMap = generateNoise();
 for (var x=0; x < heightMap.length; x++) {
@@ -30,7 +34,7 @@ for (var x=0; x < world.width; x++) {
 }
 generateRivers();
 generateTrees();
-// generateEntitys();
+generateEntitys();
 
 window.onload = function() {
 	drawWorld();
