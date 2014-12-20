@@ -4,6 +4,7 @@ var entitytype = {
 		name: "AI",
 		passable: true,
 		color: "rgba(0,0,0,1)",
-		img: ""
+		img: "",
+		prevPos: []
 	}
 };

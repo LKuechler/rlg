@@ -1,5 +1,5 @@
 function moveEntity(x, y, entity) {
-	if(world[x][y].passable === false){
+	if(blocktype[getBlock(x, y, world)].passable === false){
 		return false;
 	}
 	entity.x = x;
