@@ -14,24 +14,9 @@ function seek(attributes) {
 	var entity = attributes[2];
 	entity.tasks.shift(); //removes first task from entity
 
-	var xDiff = diff(x, entity.x);
-	var yDiff = diff(y, entity.y);
-	var response;
-	if(xDiff > yDiff) {
-		if(x > entity.x) {
-			response = moveEntity(entity.x+1, entity.y, entity);
-		} else {
-			response = moveEntity(entity.x-1, entity.y, entity);
-		}
-	} else {
-		if(y > entity.y) {
-			response = moveEntity(entity.x, entity.y+1, entity);
-		} else {
-			response = moveEntity(entity.x, entity.y-1, entity);
-		}
-	}
-
-	if(x != entity.x && y != entity.y && response) { //when entity is not yet at the desired location re add seek to tasks
+	var nextStep = findPath(entity.x, entity.y, x, y);
+	var response = moveEntity(nextStep[0], nextStep[1], entity);
+	if((x != nextStep[0]) || (y != nextStep[1]) && response) { //when entity is not yet at the desired location re add seek to tasks
 		entity.tasks.unshift({name: seek, attributes: [x, y, entity]}); //add task for entity at top of tasks list
 	}
 }

@@ -22,17 +22,17 @@ Textures:
 
 Ai:
 	☐ define ai object structure
-	☐ collision detection
+	✔ collision detection @done (15-01-14 00:38)
 		// should check if target block has attribute passable
 	☐ tasks system
 		✔ give ai without task a task @done (15-01-13 21:08)
 		☐ tasklist
 	☐ food and water system
-	☐ implement good pathfinding
+	✔ implement good pathfinding @done (15-01-14 00:38)
 	☐ Inventory
 	Tasks:
 		☐ idle movement in area
-		☐ move to point
+		✔ move to point @done (15-01-14 00:37)
 		☐ wandering
 		☐ getting ressources
 			✔ harvest @done (15-01-13 21:09)

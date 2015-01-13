@@ -5,6 +5,7 @@
 	"/js/basic/getBlock.js",
 	"/js/basic/getArrayPos.js",
 	"/js/ext/lz-string-1.3.3.js",
+	"/js/ext/pathfinding-browser.min.js",
 
 	"/js/sprites/sprites.js",
 
@@ -27,6 +28,7 @@
 
 	"/js/ai/tasks.js",
 	"/js/ai/giveTask.js",
+	"/js/ai/pathfinding.js",
 
 	"/js/init/gameLoop.js",
 
