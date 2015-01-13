@@ -26,6 +26,7 @@
 	"/js/generation/trees.js",
 
 	"/js/ai/tasks.js",
+	"/js/ai/giveTask.js",
 
 	"/js/init/gameLoop.js",
 

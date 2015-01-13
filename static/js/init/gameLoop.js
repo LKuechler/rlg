@@ -6,23 +6,18 @@ function gameLoop() {
 	var oldEntitys = entitys.slice();
 	// Entity Tasks
 	for(var i = 0; i < entitys.length; i++) {
-		giveTask(entitys[i]);
-		var moveX = 0;
-		var moveY = 0;
-		if(Math.random() < 0.5) {
-			if(Math.random() < 0.5) {
-				moveX = Math.round(Math.random());
-			} else {
-				moveX = -Math.round(Math.random());
-			}
+		var entity = entitys[i];
+		if (entity.tasks.length > 0) {
+			var task = entity.tasks[0].name;
+			var attributesList = entity.tasks[0].attributes;
+			var attributes = [];
+			for (var i = 0; i < attributesList.length; i++) {
+				attributes.push(attributesList[i]);
+			};
+			task(attributes);
 		} else {
-			if(Math.random() < 0.5) {
-				moveY = Math.round(Math.random());
-			} else {
-				moveY = -Math.round(Math.random());
-			}
-		}
-		moveEntity(entitys[i].x + moveX, entitys[i].y + moveY, entitys[i]);
+			giveTask(entity);
+		};
 	}
 	// All action has to happen here
 	reDraw(oldWorld, world, blockLayer, blocktype);
@@ -32,6 +27,6 @@ function gameLoop() {
 	if (gameLoopActive) {
 		setTimeout(function() {
 			window.requestAnimationFrame(gameLoop)
-		}, 1000);
+		}, 250);
 	}
 }

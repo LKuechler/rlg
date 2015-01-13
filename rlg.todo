@@ -25,14 +25,18 @@ Ai:
 	☐ collision detection
 		// should check if target block has attribute passable
 	☐ tasks system
-		☐ give ai without task a task
+		✔ give ai without task a task @done (15-01-13 21:08)
 		☐ tasklist
 	☐ food and water system
+	☐ implement good pathfinding
+	☐ Inventory
 	Tasks:
 		☐ idle movement in area
 		☐ move to point
 		☐ wandering
 		☐ getting ressources
+			✔ harvest @done (15-01-13 21:09)
+			☐ add to inventory
 
 Basic:
 	☐ saving worlds / loading worlds

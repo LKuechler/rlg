@@ -8,6 +8,7 @@ function draw(x, y, array, layer, type) {
 }
 
 function drawBlock(x, y, block, layer) {
+	layer.clearRect(x*tileWidth, y*tileHeight, tileWidth, tileHeight);
 	if(block.img) {
 		if(block.imgType === "random") {
 			layer.drawImage(block.img[Math.floor(Math.random()*block.img.length)], 0, 0, 16, 16, x*tileWidth, y*tileHeight, tileWidth, tileHeight);

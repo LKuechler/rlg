@@ -4,7 +4,7 @@ function generateEntitys() {
 		for (var y=0; y < world.height; y++) {
 			if(getBlock(x, y, world) === 1 && entityCount <= 1) {
 				entityCount ++;
-				entitys.push({type:0, x: x, y: y, relations:[]});
+				entitys.push({type:0, x: x, y: y, tasks:[], relations:[]});
 			}
 		}
 	}
